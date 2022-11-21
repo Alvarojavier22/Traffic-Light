@@ -12,13 +12,13 @@
 */
 .semaforo {
     background-color: black;
-    padding: 10px;
+    padding: 15px;
     display: flex;
     flex-direction: column;
-    width: 120px;
-    height: 320px;
-    margin: auto;
-    border-radius: 15%;
+    margin-left: 70px;
+    margin-top: -60px;
+    border-radius: 30px;
+    width: 125px;
 }
 .light {
     width: 100px;
@@ -39,7 +39,12 @@
 
 .green {
     background-color: green;
-    color: yellow;
+    color: green;
+}
+
+.blue {
+    background-color: blue;
+    color: blue;
 }
 
 .seleccionado {
