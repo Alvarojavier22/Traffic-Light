@@ -10,7 +10,7 @@ const TrafficLight = () => {
             <div
                 key={index}
                 onClick={() => setColor(selectColor)}
-                className={color == lightColor ? "selected " + lightColor : "light " + lightColor}>
+                className={color == lightColor ? "selected light " + lightColor : "light " + lightColor}>
             </div>
         )
     }
