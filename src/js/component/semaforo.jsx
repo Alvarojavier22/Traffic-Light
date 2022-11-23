@@ -2,41 +2,47 @@ import React, { useState } from 'react';
 
 const TrafficLight = () => {
     const [color, setColor] = useState("")
-    const [colors, setcolors] = useState(["red", "yellow", "green"])
+    const [colors, setColors] = useState(["red", "yellow", "green"])
 
 
     function selectColor(lightColor, index) {
-        return( 
-        <div
-        key={index}
-         onClick={() => lightClick (index)}
-         className={color == lightColor ? "seleccionado " + lightColor : "light " + lightColor}>
-        </div>
+        return (
+            <div
+                key={index}
+                onClick={() => setColor(selectColor)}
+                className={color == lightColor ? "selected " + lightColor : "light " + lightColor}>
+            </div>
         )
     }
 
-    function lightClick (colorIndex){
-        //setColor(colors[colorIndex])
-        let newColors=[...colors]
-        newColors.splice(colorIndex,1)
-        setcolors(newColors)
+    function lightClick(colorIndex) {
+        let newColors = [...colors]
+        newColors.splice(colorIndex, 1)
+        setColors(newColors)
+
     }
 
-    function nuevoColor (){
+    function nuevoColor() {
         let nuevoColor = [...colors, "blue"]
-        setcolors(nuevoColor)
+        setColors(nuevoColor)
     }
 
     return (
-        <div>
+        <div className="container">
             <div className="poste"></div>
             <div className="semaforo">
                 {
                     colors.map(selectColor)
                 }
             </div>
-            <button onClick={() => nuevoColor ()} className=" mt-3 m-5 btn btn-primary">Añadir color</button>
+            <div>
+                <div className="btn-group mt-3 btn btn-primary" role="group" aria-label="Basic example">
+                    <button onClick={() => nuevoColor()} type="button" className="btn btn-primary">Añadir Color</button>
+                    <button onClick={() => lightClick()} type="button" className="btn btn-primary">Eliminar Color</button>
+                </div>
+            </div>
         </div>
+
     )
 }
 

@@ -19,6 +19,7 @@
     margin-top: -60px;
     border-radius: 30px;
     width: 125px;
+    align-items: center;
 }
 .light {
     width: 100px;
@@ -47,7 +48,7 @@
     color: blue;
 }
 
-.seleccionado {
+.selected {
     box-shadow: 0px 0px 10px 10px currentColor;
     box-shadow: 0px 0px 20px 10px whitesmoke;
 }
@@ -55,8 +56,15 @@
     background-color: black;
     width: 20px;
     height: 100px;
-    margin-left: 10px;
-    display: flex;
+    margin-left: 5px;
     flex-direction: column;
-    margin: auto;
+    margin-left: 120px;
+}
+
+.container {
+    justify-content: center;
+}
+
+.btn-group {
+    border: solid 1px;
 }
