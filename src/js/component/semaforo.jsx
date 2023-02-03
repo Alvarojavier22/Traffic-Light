@@ -9,7 +9,7 @@ const TrafficLight = () => {
         return (
             <div
                 key={index}
-                onClick={() => setColor(selectColor)}
+                onClick={() => setColor(lightColor)}
                 className={color == lightColor ? "selected light " + lightColor : "light " + lightColor}>
             </div>
         )
@@ -22,10 +22,13 @@ const TrafficLight = () => {
         setColors(newColors)
 
     }
+    console.log(colors.length)
 
     function nuevoColor() {
-        let nuevoColor = [...colors, "blue"]
-        setColors(nuevoColor)
+        if (colors.length<4){
+            let nuevoColor = [...colors, "blue"]
+            setColors(nuevoColor)
+        }
     }
 
     return (
@@ -39,7 +42,7 @@ const TrafficLight = () => {
             <div>
                 <div className="btn-group mt-3 btn btn-primary" role="group" aria-label="Basic example">
                     <button onClick={() => nuevoColor()} type="button" className="btn btn-primary">Añadir Color</button>
-                    <button onClick={() => eliminar()} type="button" className="btn btn-primary">Eliminar Color</button>
+                    <button onClick={() => eliminar(3)} type="button" className="btn btn-primary">Eliminar Color</button>
                 </div>
             </div>
         </div>
